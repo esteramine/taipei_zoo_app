@@ -2,14 +2,17 @@ package com.example.taipeizooapp.plantDetail
 
 import android.os.Build
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.taipeizooapp.models.PlantModel
 import com.example.taipeizooapp.R
 
 class PlantDetailActivity : AppCompatActivity() {
     private var toolbar: Toolbar? = null
+    private var img: ImageView? = null
     private var chineseName: TextView? = null
     private var englishName: TextView? = null
     private var alsoKnown: TextView? = null
@@ -32,7 +35,7 @@ class PlantDetailActivity : AppCompatActivity() {
                 onBackPressed()
             }
         }
-
+        Glide.with(this).load(item?.img).centerCrop().into(img!!)
         chineseName?.text = item?.chineseName
         englishName?.text = item?.englishName
         alsoKnown?.text = item?.alsoKnown
@@ -44,6 +47,7 @@ class PlantDetailActivity : AppCompatActivity() {
 
     private fun initViews() {
         toolbar = findViewById(R.id.toolbar)
+        img = findViewById(R.id.img)
         chineseName = findViewById(R.id.chineseName)
         englishName = findViewById(R.id.englishName)
         alsoKnown = findViewById(R.id.alsoKnown)

@@ -37,8 +37,8 @@ class HomeActivity : AppCompatActivity() {
                         val item = list.getJSONObject(i)
                         museumList.add(
                                 MuseumModel(
-                                        "https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/gthipcp6frsaz9xsdayv/Taipei%20Zoo%20Combo%20Tickets%20.jpg",
-                                        //item.getString("E_Pic_URL"),
+                                        //"https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/gthipcp6frsaz9xsdayv/Taipei%20Zoo%20Combo%20Tickets%20.jpg",
+                                        item.getString("E_Pic_URL"),
                                         item.getString("E_Name"),
                                         item.getString("E_Info"),
                                         if (item.getString("E_Memo").isEmpty()) "無休館資訊" else item.getString("E_Memo"),

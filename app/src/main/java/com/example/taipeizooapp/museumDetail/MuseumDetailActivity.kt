@@ -45,7 +45,7 @@ class MuseumDetailActivity : AppCompatActivity() {
         }
 
         img?.apply {
-            Glide.with(context).load(item?.img).into(this)
+            Glide.with(context).load(item?.img).centerCrop().into(this)
         }
         body?.text = item?.body
 
@@ -64,7 +64,8 @@ class MuseumDetailActivity : AppCompatActivity() {
                         plantList.add(
                                 PlantModel(
                                         item.getString("F_Pic01_URL"),
-                                        "植物名", //item.getString("﻿F_Name_Ch"),
+                                        //"植物名",
+                                        item.getString("﻿F_Name_Ch"),
                                         item.getString("F_Name_En"),
                                         item.getString("F_AlsoKnown"),
                                         item.getString("F_Brief"),
